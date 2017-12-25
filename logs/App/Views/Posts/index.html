@@ -1,0 +1,10 @@
+{% block body %}
+
+
+  <h1>Posts</h1>
+  <ul>
+    {% for post in posts %}
+    <li>{{post}}</li>
+    {% endfor %}
+  </ul>
+{% end block %}
