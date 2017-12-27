@@ -5,9 +5,9 @@ namespace App\Controllers;
 use \Core\View;
 
 /**
- * Home controller
+ * Home controller from codefii
  *
- * PHP version 5.4
+ * PHP version 7.1
  */
 class Home extends \Core\Controller
 {
@@ -42,13 +42,13 @@ class Home extends \Core\Controller
     {
         /*
         View::render('Home/index.php', [
-            'name'    => 'Dave',
+            'name'    => 'Prince',
             'colours' => ['red', 'green', 'blue']
         ]);
         */
-        View::renderTemplate('Home/index.html', [
-            'name'    => 'Dave',
-            'colours' => ['red', 'green', 'blue']
+        View::render('Home/index.php', [
+            'name'    => 'Prince Darlington',
+            'colours' => ['monday', 'tuesday', 'wednesday']
         ]);
     }
 }

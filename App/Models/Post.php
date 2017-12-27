@@ -4,7 +4,7 @@ namespace App\Models;
 /**
  * Post model
  *
- * PHP version 5.4
+ * PHP version 7.1
  */
 class Post extends \Core\Parts\Model
 {
@@ -16,11 +16,31 @@ class Post extends \Core\Parts\Model
      */
     public static function getAll()
     {
-            // $db = static::getDb();
-            // $stmt = $db->query('SELECT * FROM users');
-            // $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $results = static::getDb()->query("SELECT * FROM users");
+            $results = static::getDb()->query("SELECT * FROM play");
             return $results;
 
     }
+    public static function saveInfo($val,$val2){
+        $db = static::getDb();
+        $stmt = $db->prepare("INSERT INTO play(title,content) VALUES(?,?)");
+        return $stmt->execute(array($val,$val2));
+    }
+    public static function updateInfo($val,$val2)
+    {
+        $db = static::getDb();
+        $stmt = $db->prepare("UPDATE play SET title =? WHERE id =?");
+        return $stmt->execute(array($val,$val2));
+    }
+    public static function removeNews($val)
+    {
+        $db = static::getDb();
+        $stmt = $db->prepare("DELETE FROM play WHERE id ='$val'");
+        return $stmt->execute();
+    }
 }
+
+?>
+<?php
+
+
+?>

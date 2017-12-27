@@ -1,11 +1,11 @@
 <?php
 
-namespace Core;
+namespace Core\Helpers;
 
 /**
  * Router
  *
- * PHP version 5.4
+ * PHP version 7.1
  */
 class Router
 {
@@ -30,7 +30,7 @@ class Router
      *
      * @return void
      */
-    public function point($route, $params = [])
+    public function routes($route, $params = [])
     {
         // Convert the route to a regular expression: escape forward slashes
         $route = preg_replace('/\//', '\\/', $route);

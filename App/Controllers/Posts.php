@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use \Core\View;
 use App\Models\Post;
+use Core\Helpers\Add;
+use Core\Helpers\Validate;
+use Core\Helpers\Redirect;
 
 /**
  * Posts controller
@@ -19,12 +22,18 @@ class Posts extends \Core\Controller
      * @return void
      */
     public function indexAction()
-    {
-        $posts = Post::getAll();
 
-        View::renderTemplate('Posts/index.html', [
-            'posts' => $posts
-        ]);
+    {
+
+            $allPosts = Post::getAll();
+            //
+            // echo $allPosts->title
+
+            View::render('Posts/index.php', [
+                'posts' => $allPosts
+            ]);
+
+
     }
 
     /**
@@ -34,7 +43,18 @@ class Posts extends \Core\Controller
      */
     public function addNewAction()
     {
-        echo 'Hello from the addNew action in the Posts controller!';
+
+            if(Add::exists())
+            {
+                $d = $this->route_params['id'];
+            $addInfo = Post::updateInfo(Add::get('name'),$d);
+            if($addInfo){
+                    Redirect::to('/try/framework/posts/index');
+            }
+
+            }
+
+
     }
 
     /**
@@ -42,10 +62,38 @@ class Posts extends \Core\Controller
      *
      * @return void
      */
+
     public function editAction()
     {
-        echo 'Hello from the edit action in the Posts controller!';
-        echo '<p>Route parameters: <pre>' .
-             htmlspecialchars(print_r($this->route_params, true)) . '</pre></p>';
+            if($this->route_params)
+            {
+
+            View::render('Posts/edit.php',['id'=>$this->route_params['id']]);
+            }
+
     }
+
+    public function new()
+    {
+      View::renderTemplate('Posts/new.html');
+    }
+    public function createAction(){
+        if(Add::exists())
+            {
+            $save = Post::saveInfo(Add::get('title'),Add::get('content'));
+            if($save){
+                Redirect::to('/try/framework/posts/index');
+            }
+            }
+        }
+        public function deleteAction()
+        {
+            $id = $this->route_params['id'];
+            $remove = Post::removeNews($id);
+            if($remove)
+            {
+            Redirect::to('/try/framework/posts/index');
+            }
+        }
+
 }

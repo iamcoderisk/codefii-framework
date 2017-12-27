@@ -1,8 +1,8 @@
 <?php
 /*
-*
-*
-*Remember to use the users objecct to get the users data whenever you want to
+* author: Prince Darlington
+*website:http://codefii.com
+*license: open-source
 */
 namespace Core\Helpers;
 use \Core\Parts\Model;

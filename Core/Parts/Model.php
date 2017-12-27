@@ -1,8 +1,9 @@
 <?php
 namespace Core\Parts;
 
-use PDO;
+
 use Core\Config;
+use PDO;
 abstract class Model {
   public $db,
           $_errors=false,
