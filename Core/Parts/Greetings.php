@@ -1,5 +1,5 @@
 <?php
-namespace Core\Helpers;
+namespace Core\Parts;
 class Greetings
 {
   public function __construct()

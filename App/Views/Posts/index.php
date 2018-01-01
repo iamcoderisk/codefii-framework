@@ -11,14 +11,13 @@
     <ul>
 
     <?php
-        foreach($posts AS $post){
+        foreach($posts->results()  AS $post){
 
         ?>
+        <?php echo $post->username;?>
 
-    <li><?php echo $post['title'];?></a> (<a href="edit/<?php echo $post['id'];?>">Update</a>|
-
-    <a href="delete/<?php echo $post['id'];?>">Delete</a>)</li>
-<?php } ?>
+        <?php echo $post->id; ?>
+        <?php } ?>
     </ul>
 </body>
 </html>

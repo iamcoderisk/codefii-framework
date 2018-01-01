@@ -1,35 +1,43 @@
 <?php
-namespace Core\Parts;
-
-
-use Core\Config;
-use PDO;
-abstract class Model {
-  public $db,
+ namespace Core\Parts;
+ use Core\Config;
+ use Core\Parts\User;
+ use PDO;
+class Model
+{
+  private static $_instance = null;
+  public $_pdo,
           $_errors=false,
           $_count=0,
           $_results,
           $_query;
+  public function __construct()
+  {
+  try{
+    $this->_pdo = new PDO('mysql:host='.Config::get('mysql/host').';dbname='.Config::get('mysql/database'),Config::get('mysql/username'),Config::get('mysql/password'));
+
+    $this->_pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+  }catch(PDOException $e)
+  {
+    die($e->getMessage());
+  }
+  }
+
+
   public static function getDb()
   {
-    static $db = null;
-    if($db==null)
+    if(!isset(self::$_instance))
     {
-      try{
-        $db = new PDO('mysql:host='.Config::get('mysql/host').';dbname='.Config::get('mysql/database'),Config::get('mysql/username'),Config::get('mysql/password'));
-        $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        return $db;
-      }catch(PDOException $e)
-      {
-        echo $e->getMessage();
-      }
+      self::$_instance = new Model();
     }
-
+    return self::$_instance;
   }
+  //generic query method
+
   public function query($sql,$params=array())
   {
     $this->_error = false;
-    if($this->_query = $this->db->prepare($sql))
+    if($this->_query = $this->_pdo->prepare($sql))
     {
         $x =1;
         if(count($params))
@@ -85,7 +93,7 @@ abstract class Model {
     return $this->action('DELETE',$table,$where);
   }
   //insert method
-  public function insert($table,$fields=array())
+  public function insertInTo($table,$fields=array())
   {
       $keys = array_keys($fields);
       $values = null;
@@ -148,5 +156,6 @@ abstract class Model {
   {
     return $this->results()[0];
   }
+
 
 }

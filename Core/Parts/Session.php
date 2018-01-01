@@ -1,5 +1,5 @@
 <?php
-namespace Core\Helpers;
+namespace Core\Parts;
 class Session
   {
     public static function exists($name)

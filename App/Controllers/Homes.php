@@ -2,14 +2,16 @@
 
 namespace App\Controllers;
 
-use \Core\View;
+use Core\View;
+use App\Models\Homey;
+
 
 /**
  * Home controller from codefii
  *
  * PHP version 7.1
  */
-class Home extends \Core\Controller
+class Homes extends \Core\Controller
 {
 
     /**
@@ -46,9 +48,15 @@ class Home extends \Core\Controller
             'colours' => ['red', 'green', 'blue']
         ]);
         */
+        $home = Homey::getAll();
+
         View::render('Home/index.php', [
             'name'    => 'Prince Darlington',
             'colours' => ['monday', 'tuesday', 'wednesday']
         ]);
+    }
+    public function aboutAction()
+    {
+        echo"hello";
     }
 }

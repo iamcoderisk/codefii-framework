@@ -1,5 +1,5 @@
 <?php
-namespace Core\Helpers;
+namespace Core\Parts;
 use Core\Helpers\Session;
 class Token
 {

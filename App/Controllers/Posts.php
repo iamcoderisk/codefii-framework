@@ -7,6 +7,7 @@ use App\Models\Post;
 use Core\Helpers\Add;
 use Core\Helpers\Validate;
 use Core\Helpers\Redirect;
+use Core\Helpers\User;
 
 /**
  * Posts controller
@@ -28,7 +29,7 @@ class Posts extends \Core\Controller
             $allPosts = Post::getAll();
             //
             // echo $allPosts->title
-
+            //
             View::render('Posts/index.php', [
                 'posts' => $allPosts
             ]);
@@ -94,6 +95,17 @@ class Posts extends \Core\Controller
             {
             Redirect::to('/try/framework/posts/index');
             }
+        }
+        public function testAction()
+        {
+            // $user = Post::preDb();
+            View::render('Posts/play.php');
+        }
+        public function aboutAction()
+        {
+            $m = Post::preDb('ekemini','kekekek');
+            print_r($m);
+            View::render('Home/about.php');
         }
 
 }

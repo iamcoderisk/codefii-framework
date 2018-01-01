@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Helpers;
+namespace Core\Parts;
 class Hash
 {
   public static function make($string, $salt='')

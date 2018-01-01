@@ -12,12 +12,11 @@ namespace App\Models;
  use Core\Parts\Redirect;
  use Core\Parts\User;
  use Core\Parts\Hash;
- use Core\Parts\QueryBuilder;
  use Core\Parts\Model;
 
 
 
-class Post extends Model
+class Homey extends Model
 {
 
     /**

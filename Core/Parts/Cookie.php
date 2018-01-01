@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Helpers;
+namespace Core\Parts;
 class Cookie{
 
   public static function exists($name)

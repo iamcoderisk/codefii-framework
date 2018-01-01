@@ -1,5 +1,5 @@
 <?php
-  namespace Core\Helpers;
+  namespace Core\Parts;
   class Add
   {
     public static function exists($type='post')

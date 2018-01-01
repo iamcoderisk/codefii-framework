@@ -1,15 +1,16 @@
 <?php
 
-namespace Core\Helpers;
+namespace Core\Parts;
+use Core\Parts\Model;
 
-class Validate extends \Core\Parts\Model
+class Validate
 {
   private $_passed = false,
            $_errors = array(),
            $_db     =  null;
   public function __construct()
   {
-    $this->_db = static::getDb();
+    $this->_db = Model::getDb();
   }
   public function check($source, $items=array())
   {
