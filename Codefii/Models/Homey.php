@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace Codefii\Models;
 /**
  * Post model
  *
  * PHP version 7.1
  */
- use App\Models\Post;
+ use Codefii\Models\Post;
  use Core\Parts\Add;
  use Core\Parts\Validate;
  use Core\Parts\Redirect;

@@ -1,10 +1,10 @@
 <?php
 /******/
-namespace App\Controllers;
+namespace Codefii\Controllers;
 use Core\Controller;
 use Core\View;
 use Core\Parts\Add;
-use App\Models\TaskModel;
+use Codefii\Models\TaskModel;
 use Core\Parts\Validate;
 class TaskController extends Controller
 {
@@ -21,7 +21,7 @@ public function createAction()
     //call the addTasks method
     $validate = new Validate();
 
-  // $add = TaskModel::addTasks(Add::get('title'),Add::get('content'));
+  $add = TaskModel::addTasks(Add::get('title'),Add::get('content'));
 
   }
 }

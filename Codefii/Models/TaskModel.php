@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Codefii\Models;
 
 use Core\Parts\Hash;
 use Core\Parts\Model;
@@ -13,6 +13,6 @@ class TaskModel extends Model
       'title'=>$title,
       'content'=>$content
     ));
-    
+
   }
 }

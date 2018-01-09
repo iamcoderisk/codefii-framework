@@ -10,7 +10,7 @@
     "autoload": {
         "psr-4": {
              "Core\\": "Core/",
-             "App\\": "App/",
+             "Codefii\\": "Codefii/",
              "logs\\":"logs/"
         }
     }

@@ -11,55 +11,55 @@ class ComposerStaticInitbfdcd393580ac0b7d822b4a29366cad9
     );
 
     public static $prefixLengthsPsr4 = array (
-        'l' => 
+        'l' =>
         array (
             'logs\\' => 5,
         ),
-        'T' => 
+        'T' =>
         array (
             'Twig\\' => 5,
         ),
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
         ),
-        'C' => 
+        'C' =>
         array (
             'Core\\' => 5,
         ),
-        'A' => 
+        'A' =>
         array (
-            'App\\' => 4,
+            'Codefii\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'logs\\' => 
+        'logs\\' =>
         array (
             0 => __DIR__ . '/../..' . '/logs',
         ),
-        'Twig\\' => 
+        'Twig\\' =>
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Core\\' => 
+        'Core\\' =>
         array (
             0 => __DIR__ . '/../..' . '/Core',
         ),
-        'App\\' => 
+        'Codefii\\' =>
         array (
-            0 => __DIR__ . '/../..' . '/App',
+            0 => __DIR__ . '/../..' . '/Codefii',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'T' => 
+        'T' =>
         array (
-            'Twig_' => 
+            'Twig_' =>
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),

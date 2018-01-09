@@ -10,5 +10,5 @@ return array(
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Core\\' => array($baseDir . '/Core'),
-    'App\\' => array($baseDir . '/App'),
+    'Codefii\\' => array($baseDir . '/Codefii'),
 );

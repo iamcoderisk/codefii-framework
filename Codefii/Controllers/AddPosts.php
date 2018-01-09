@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controllers;
+namespace Codefii\Controllers;
 
 use \Core\View;
-use App\Models\AddPost;
+use Codefii\Models\AddPost;
 
 /**
  * Posts controller

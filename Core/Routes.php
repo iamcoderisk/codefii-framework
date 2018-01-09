@@ -4,9 +4,9 @@
 $router = new Core\Helpers\Router();
 
 // Add the routes
-$router->routes('', ['controller' => 'Homes', 'action' => 'index']);//this is the default routes
-$router->routes('task',['controller'=>'TaskController','action'=>'index']);
-$router->routes('task/create',['controller'=>'TaskController','action'=>'create']);
+$router->routes('', ['controller' => 'TaskController', 'action' => 'index']);//this is the default routes
+// $router->routes('task',['controller'=>'TaskController','action'=>'index']);
+// $router->routes('task/create',['controller'=>'TaskController','action'=>'create']);
 
 $router->routes('/about/*',['controller'=>'Homes','action'=>'about']);
 $router->routes('{controller}/{action}');

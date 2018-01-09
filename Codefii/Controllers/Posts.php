@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controllers;
+namespace Codefii\Controllers;
 
 use \Core\View;
-use App\Models\Post;
+use Codefii\Models\Post;
 use Core\Helpers\Add;
 use Core\Helpers\Validate;
 use Core\Helpers\Redirect;
