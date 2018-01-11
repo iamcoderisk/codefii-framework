@@ -6,7 +6,7 @@ use Core\View;
 use Core\Parts\Add;
 use Codefii\Models\TaskModel;
 use Core\Parts\Validate;
-class TaskController extends Controller
+class Task extends Controller
 {
 
   public function indexAction()

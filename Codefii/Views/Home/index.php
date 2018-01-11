@@ -6,13 +6,17 @@
 
 </head>
 <body>
-    <h1>Welcome</h1>
-    <p>Hello <?php echo htmlspecialchars($name); ?>!</p>
-
-    <ul>
-        <?php foreach ($colours as $colour): ?>
-            <li><?php echo htmlspecialchars($colour); ?></li>
-        <?php endforeach; ?>
-    </ul>
+        <?php foreach($error as $er)  {
+        echo $er;
+        echo "<br />";
+       }
+       ?>
+   <form method="post" action="">
+      
+       <input type="text" name="First-Name" placeholder="first name"/><br/>
+       <input type="text" name="Last-Name" placeholder="Last name"/><br/>
+       
+       <input type="submit" name="submit" value="submit">
+   </form>
 </body>
 </html>

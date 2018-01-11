@@ -8,7 +8,7 @@ class Redirect
     {
       if(is_string($location))
       {
-        header('Location:'.$location);
+        header('Location:'.$location.'.php');
         exit();
       }
     }

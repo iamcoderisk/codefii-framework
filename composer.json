@@ -1,7 +1,9 @@
-{   "name": "codefii/app",
-    "description": "Codeffi Application Structures",
+{   "name": "codefii/project",
+    "description": "codefii web application structure",
     "homepage": "https://codefii.com",
     "type": "project",
+    "author":"Prince E. Darlington",
+    "contact":"ekeminyd@gmail.com",
     "require": {
         "twig/twig": "^2.0",
         "phpmailer/phpmailer":"^5.0",
@@ -11,7 +13,8 @@
         "psr-4": {
              "Core\\": "Core/",
              "Codefii\\": "Codefii/",
-             "logs\\":"logs/"
+             "logs\\":"logs/",
+             "Core\\Authentication\\":"Core/Authentication/"
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Core;
 session_start();
 $GLOBALS['config'] =  array(
   'mysql'=>array(
-    'host'=>'127.0.0.1',
+    'host'=>'localhost',
     'username'=>'root',
     'password'=>'prince',
     'database'=>'codefi',

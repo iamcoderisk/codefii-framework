@@ -1,6 +1,6 @@
 <?php
   namespace Core\Parts;
-  class Add
+  class Request
   {
     public static function exists($type='post')
     {

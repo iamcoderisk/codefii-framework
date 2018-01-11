@@ -9,6 +9,7 @@ return array(
     'logs\\' => array($baseDir . '/logs'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Core\\Authentication\\' => array($baseDir . '/Core/Authentication'),
     'Core\\' => array($baseDir . '/Core'),
     'Codefii\\' => array($baseDir . '/Codefii'),
 );
