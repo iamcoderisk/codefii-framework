@@ -3,15 +3,15 @@
 namespace Core\Parts;
 use Core\Parts\Model;
 
-class Validation
+class Validation 
 {
   private $_passed = false,
            $_errors = array(),
            $_db     =  null;
-  // public function __construct()
-  // {
-  //   $this->_db = Model::getDb();
-  // }
+  public function __construct()
+  {
+    // $this->_db = Model::getDb();
+  }
   public function validate($source, $items=array())
   {
     foreach($items as $item => $rules)
@@ -19,7 +19,7 @@ class Validation
       $newItem = preg_replace("/[^a-zA-Z]/", "\t", $item);
       foreach($rules as $rule =>$rule_value)
       {
-          $value = trim($source[$newItem]);
+          $value = trim($source[$item]);
         // echo"{$item} {$rule} must be {$rule_value}<br />";
         if($rule ==='required' && empty($value))
         {
@@ -36,20 +36,20 @@ class Validation
              break;
              case 'max':
              if(strlen($value) > $rule_value){
-               $this->addError("<span style='color:red;'>{$newItem} must be maximum of {$rule_value} characters.</span>");
+               $this->addError("<span style='color:red;'>{$nwItem} must be maximum of {$rule_value} characters.</span>");
              }
              break;
              case 'matches':
               if($value != $source[$rule_value])
               {
-                $this->addError("<span style='color:red;'>{$newItem} doesn't match {$rule_value} </span>");
+                $this->addError("<span style='color:red;'>{$item} doesn't match {$rule_value} </span>");
               }
              break;
              case 'unique':
-             $check = $this->_db->get($rule_value, array($newItem,'=',$value));
+             $check = Model::getDb()->get($rule_value, array($item,'=',$value));
              if($check->count())
              {
-               $this->addError("<span style='color:red;'>{$newItem} already exists!</span>");
+               $this->addError("<span style='color:red;'>{$item} already exists!</span>");
              }
              break;
 
@@ -74,7 +74,7 @@ class Validation
   {
     return $this->_errors;
   }
-  public function passed()
+  public function isPassed()
   {
     return $this->_passed;
   }

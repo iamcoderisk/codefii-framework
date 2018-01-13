@@ -14,6 +14,9 @@ class Auth
   public function __construct($user = null)
   {
     $this->_db = Model::getDb();
+    if($this->_db){
+      echo"true";
+    }
     $this->_sessionName = Config::get('session/session_name');
     $this->_cookieName = Config::get('remember/cookie_name');
     //check if user is logged in or not
